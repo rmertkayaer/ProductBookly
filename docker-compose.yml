@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: bookly-postgres
+    environment:
+      POSTGRES_DB: bookly
+      POSTGRES_USER: bookly
+      POSTGRES_PASSWORD: bookly_dev
+    ports:
+      # Host 5433, not 5432: a native PostgreSQL service may already own 5432.
+      - "5433:5432"
+    volumes:
+      - bookly-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bookly -d bookly"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  bookly-pgdata:

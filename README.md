@@ -3,6 +3,22 @@
 > A multi-tenant appointment scheduling platform, built as a modular monolith.
 > This document is the single source of truth for scope, architecture, and milestones.
 
+## Run it
+
+```bash
+git clone https://github.com/rmertkayaer/ProductBookly.git && cd ProductBookly
+docker compose up -d          # Postgres 16 on host port 5433 (5432 may be taken by a native install)
+dotnet run --project src/Bookly.Api
+# → http://localhost:<port>/swagger · /health · /health/ready · /api/v1/ping
+```
+
+Migrations are applied automatically on startup in Development only. EF commands always name the context and project (two DbContexts from M3 on):
+
+```bash
+dotnet ef migrations add <Name> --project src/Modules/Core/Bookly.Core --startup-project src/Bookly.Api --context CoreDbContext --output-dir Persistence/Migrations
+```
+> **Owner:** you. **Timeline:** ~8–10 weeks at 8 focused hours/day. **Budget:** $0 (free tiers only).
+
 ---
 
 ## 1. Vision & Goals
@@ -11,7 +27,7 @@
 A SaaS-style booking system where a business owner (a barber shop, a clinic, a tutor) can define services, staff, and working hours, and their customers can book, cancel, and reschedule appointments online.
 
 ### Why this project (career goal)
-Demonstrate, with working code, the skills a strong .NET engineer is expected to have:
+Demonstrate, with working code, the skills a strong mid-level .NET engineer is expected to have:
 
 | Skill you want to prove | Where it shows up |
 |---|---|
@@ -136,7 +152,7 @@ No repositories-for-the-sake-of-repositories, no 5-layer soup. The handler uses 
 
 | Concern | Choice | Introduced |
 |---|---|---|
-| Runtime | .NET 9, C# 13 | M0 |
+| Runtime | .NET 10 (LTS), C# 14 | M0 |
 | API | ASP.NET Core Minimal APIs (+ MediatR, FluentValidation) | M0 |
 | Database | PostgreSQL 16, schema-per-module | M0 |
 | ORM | EF Core (Npgsql) | M0 |

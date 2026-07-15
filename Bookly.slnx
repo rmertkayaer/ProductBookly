@@ -1,0 +1,20 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Bookly.Api/Bookly.Api.csproj" />
+    <Project Path="src/Bookly.Shared/Bookly.Shared.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/" />
+  <Folder Name="/src/Modules/Core/">
+    <Project Path="src/Modules/Core/Bookly.Core.Contracts/Bookly.Core.Contracts.csproj" />
+    <Project Path="src/Modules/Core/Bookly.Core/Bookly.Core.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Scheduling/">
+    <Project Path="src/Modules/Scheduling/Bookly.Scheduling.Contracts/Bookly.Scheduling.Contracts.csproj" />
+    <Project Path="src/Modules/Scheduling/Bookly.Scheduling/Bookly.Scheduling.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Bookly.Core.Tests/Bookly.Core.Tests.csproj" />
+    <Project Path="tests/Bookly.IntegrationTests/Bookly.IntegrationTests.csproj" />
+    <Project Path="tests/Bookly.Scheduling.Tests/Bookly.Scheduling.Tests.csproj" />
+  </Folder>
+</Solution>
