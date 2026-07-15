@@ -12,7 +12,7 @@
 A SaaS-style booking system where a business owner (a barber shop, a clinic, a tutor) can define services, staff, and working hours, and their customers can book, cancel, and reschedule appointments online.
 
 ### Why this project (career goal)
-Demonstrate, with working code, the skills a strong mid-level .NET engineer is expected to have:
+Demonstrate, with working code, the skills a strong .NET engineer is expected to have:
 
 | Skill you want to prove | Where it shows up |
 |---|---|
