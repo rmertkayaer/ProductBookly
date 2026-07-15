@@ -2,7 +2,6 @@
 
 > A multi-tenant appointment scheduling platform, built as a modular monolith.
 > This document is the single source of truth for scope, architecture, and milestones.
-> **Owner:** you. **Timeline:** ~8–10 weeks at 8 focused hours/day.
 
 ---
 
